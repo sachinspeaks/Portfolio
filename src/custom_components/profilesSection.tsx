@@ -46,7 +46,7 @@ const ProfilesSection: React.FC = () => {
                 <div className="flex items-start gap-4">
                   <div className="rounded-full bg-primary/20 p-2 h-12 w-12">
                     <img
-                      src={`/profileicons/${profile.image}.svg`}
+                      src={`profileicons/${profile.image}.svg`}
                       alt={profile.name}
                     />
                   </div>

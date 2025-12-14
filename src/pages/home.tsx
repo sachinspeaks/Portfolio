@@ -12,6 +12,7 @@ import { useRef } from "react";
 
 const Home: React.FC = () => {
   const contactRef = useRef<HTMLElement | null>(null);
+  const projectRef = useRef<HTMLElement | null>(null);
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* theme toggle */}
@@ -22,10 +23,10 @@ const Home: React.FC = () => {
       <Navbar />
       {/* main content */}
       <main>
-        <HeroSection />
+        <HeroSection sectionRef={projectRef} />
         <AboutMeSection sectionRef={contactRef} />
         <SkillsSection />
-        <ProjectsSection />
+        <ProjectsSection sectionRef={projectRef} />
         <ProfilesSection />
         <ContactSection sectionRef={contactRef} />
       </main>

@@ -95,7 +95,7 @@ const SkillsSection: React.FC = () => {
                   </h3>
                   <div className="p-2 h-12 w-12 rounded-full bg-primary/30 place-self-center">
                     <img
-                      src={`/skillIcons/${skill.iconName}.svg`}
+                      src={`skillIcons/${skill.iconName}.svg`}
                       alt="icon"
                       className="self-center"
                     />

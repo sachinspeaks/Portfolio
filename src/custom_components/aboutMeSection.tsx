@@ -8,6 +8,16 @@ const AboutMeSection: React.FC<sectionPropType> = ({ sectionRef }) => {
     if (!sectionRef || !sectionRef.current) return;
     sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "resume/sachin.pdf";
+    link.download = "sachin.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="py-24 px-4 relative" ref={sectionRef}>
       {" "}
@@ -38,13 +48,12 @@ const AboutMeSection: React.FC<sectionPropType> = ({ sectionRef }) => {
                 Get In Touch
               </Button>
               <Button
+                onClick={handleDownload}
                 className="border-[1.5] border-border hover:border-primary hover:text-primary transition-colors duration-300 cursor-pointer"
                 variant="outline"
               >
                 Download Resume
               </Button>
-
-              <a href=""></a>
             </div>
           </div>
 

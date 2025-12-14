@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
+import type { sectionPropType } from "@/types/globalTypes";
 import { ArrowDown } from "lucide-react";
 
-const HeroSection: React.FC = () => {
+const HeroSection: React.FC<sectionPropType> = ({ sectionRef }) => {
+  const scrollToSection = () => {
+    if (!sectionRef || !sectionRef.current) return;
+    sectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <section
       id="hero"
@@ -23,6 +28,7 @@ const HeroSection: React.FC = () => {
           </p>
           <div className="opacity-0 animate-fade-in-delay-4">
             <Button
+              onClick={scrollToSection}
               variant="outline"
               className="border-[1.5] border-border hover:border-primary hover:text-primary transition-colors duration-300 cursor-pointer"
             >

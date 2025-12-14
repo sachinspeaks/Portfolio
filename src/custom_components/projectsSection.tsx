@@ -1,5 +1,5 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import type { ProjectsType } from "@/types/globalTypes";
+import type { ProjectsType, sectionPropType } from "@/types/globalTypes";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects: ProjectsType[] = [
@@ -23,9 +23,9 @@ const projects: ProjectsType[] = [
   },
 ];
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection: React.FC<sectionPropType> = ({ sectionRef }) => {
   return (
-    <section id="projects" className="py-24 px-4 relative">
+    <section id="projects" className="py-24 px-4 relative" ref={sectionRef}>
       <div className="container mx-auto max-w-5xl flex flex-col gap-8">
         <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-center">
           Featured <span className="text-primary">Project</span>
@@ -40,7 +40,7 @@ const ProjectsSection: React.FC = () => {
               <CardContent className="h-48 p-0 relative">
                 <img
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  src={`/projecticons/${project.image}.jpg`}
+                  src={`projecticons/${project.image}.jpg`}
                   alt={`${project.title}`}
                 />
               </CardContent>
